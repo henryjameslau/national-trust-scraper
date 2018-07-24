@@ -125,6 +125,67 @@
     }
 
 
+    $("#btnSearch").click(function( event ) {
+   						event.preventDefault();
+   						event.stopPropagation();
+   						myValue=$("#pcInput").val();
+
+   						getCodes(myValue);
+   });
+
+   function getCodes(myPC)	{
+
+   				console.log(myPC);
+
+   					var myURIstring=encodeURI("https://api.postcodes.io/postcodes/"+myPC);
+   					$.support.cors = true;
+   					$.ajax({
+   						type: "GET",
+   						crossDomain: true,
+   						dataType: "jsonp",
+   						url: myURIstring,
+   						error: function (xhr, ajaxOptions, thrownError) {
+   							console.log(thrownError);
+   								//$("#pcError").text("couldn't process this request").show();
+
+   							},
+   						success: function(data1){
+   							if(data1.status == 200 ){
+   								console.log(data1);
+   								//$("#pcError").hide();
+   								lat =data1.result.latitude;
+   								lng = data1.result.longitude;
+
+   								success(lat,lng)
+   								//$("#successMessage").text("The postcode " + myPC + " is situated in " + areaName + " which has an area code of " + area).show();
+   							} else {
+   			          //$("#successMessage").hide();
+   								//$("#pcError").text("Not a valid postcode I'm afraid").show();
+   							}
+   						}
+
+   					});
+
+   }
+
+   function success(lat,lng) {
+
+         //go on to filter
+         //Translate lng lat coords to point on screen
+         // point = map.project([lng,lat]);
+        //  console.log(point);
+        //
+        //  map.flyTo({center:[lng,lat], zoom:10, duration:4000})
+        //
+        //  map.on('flystart', function(){
+        //    flying=true;
+        //  });
+        //
+        //  map.on('flyend', function(){
+        //    flying=false;
+        // });
+      }
+
 	  </script>
 
   </body>
