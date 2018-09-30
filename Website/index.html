@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="lib/globalStyle.css" />
     <link href="css/styles.css" rel="stylesheet">
     <link href="lib/select2.min.css" rel="stylesheet" />
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
 
   </head>
 
@@ -32,26 +33,13 @@
       </div>
       <div class="form-group-icon" role="radio" tabindex="3">
         <input id="button-3" class="radio-primary-icon" type="radio" name="button" value="3" aria-checked="false">
-        <label class="label-primary-icon female" for="button-3">Family 1 Adult</label>
+        <label class="label-primary-icon oneadultfam" for="button-3">Family 1 Adult</label>
       </div>
       <div class="form-group-icon" role="radio" tabindex="4">
         <input id="button-4" class="radio-primary-icon" type="radio" name="button" value="4" aria-checked="false">
-        <label class="label-primary-icon female" for="button-4">Family 2 Adults</label>
+        <label class="label-primary-icon twoadultfam" for="button-4">Family 2 Adults</label>
       </div>
     </form>
-
-    <h3>Enter your postcode</h3>
-
-    <div id="postcode-wrapper">
-        <form id="pcForm">
-          <input id="pcInput" type="search" tabindex="1" onfocus="if(this.value == 'e.g NP10 8XG') { this.value = '';}" value="e.g NP10 8XG" onblur="if(this.value == '') { this.value = 'e.g NP10 8XG'}" value="e.g NP10 8XG">
-          <button class="btnSearch" type="submit"><img src="img/search.svg"></button>
-        </form>
-    </div>
-
-    <div id="location">
-        <button class="btnLocation btn-primary1 icon">Geolocate</button>
-    </div>
 
     <h3>How far are you willing to travel?</h3>
     <br/><br/>
@@ -78,9 +66,24 @@
       </div>
     </form>
 
+    <h3>Enter your postcode</h3>
+
+    <div id="postcode-wrapper">
+        <form id="pcForm">
+          <input id="pcInput" type="search" tabindex="1" onfocus="if(this.value == 'e.g NP10 8XG') { this.value = '';}" value="e.g NP10 8XG" onblur="if(this.value == '') { this.value = 'e.g NP10 8XG'}" value="e.g NP10 8XG">
+          <button class="btnSearch" type="submit"><img src="img/search.svg"></button>
+        </form>
+    </div>
+
+    <div id="location">
+        <button class="btnLocation btn-primary1 icon">Geolocate</button>
+    </div>
+
     <br/>
     <button class="btn-primary large">Go</button>
     <!--Library-->
+
+    <div id='map'></div>
 
     <script src="https://cdn.ons.gov.uk/vendor/jquery/2.1.4/jquery.min.js"></script>
     <script src="js/bootstrap-slider.js"></script>
@@ -88,13 +91,32 @@
     <script src="lib/modernizr.svg.min.js" type="text/javascript"></script>
     <script src="https://cdn.ons.gov.uk/vendor/pym/1.3.2/pym.min.js" type="text/javascript"></script>
     <script src="lib/select2.min.js"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+
 
 
     <script>
 
 	function initialise() {
-
 	 pymChild = new pym.Child();
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoiaGVucnlqYW1lc2xhdSIsImEiOiJjamg5Mnh3YWYwYmY2MzBvaTR1dW1iNXdsIn0.fMam--11YBj0lsfkSeFhYw';
+    var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/mapbox/streets-v9',
+        center: [-96, 37.8], // starting position
+        zoom: 3 // starting zoom
+    });
+
+    // Add geolocate control to the map.
+    map.addControl(new mapboxgl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        trackUserLocation: true
+    }));
+
+
 
     // Bootstrap slider style
       $("#ex8").slider({
@@ -107,8 +129,10 @@
       });
 
     // get value of slider on click and move
-	 $( "#ex8").on("change", function() {var guess_value = $('#ex8').data('slider').getValue();
-	 console.log(guess_value)} );
+	 $( "#ex8").on("change", function() {
+     var guess_value = $('#ex8').data('slider').getValue();
+  	 console.log(guess_value)
+   });
 
 
 	} //end initialise

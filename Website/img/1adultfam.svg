@@ -18,11 +18,11 @@
    viewBox="0 0 112 48"
    style="enable-background:new 0 0 112 48;"
    xml:space="preserve"
-   sodipodi:docname="female.svg"
+   sodipodi:docname="1adultfam.svg"
    inkscape:version="0.92.1 r15371"><metadata
      id="metadata15"><rdf:RDF><cc:Work
          rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
      id="defs13" /><sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -48,7 +48,7 @@
 	.st0{fill:#424042;}
 </style><g
      id="g8"
-     transform="translate(17.352113,1.1830986)"><circle
+     transform="translate(0.20228373,1.1830986)"><circle
        class="st0"
        cx="17.1"
        cy="8.6999998"
@@ -60,16 +60,16 @@
        id="path6"
        inkscape:connector-curvature="0"
        style="fill:#424042" /></g><g
-     transform="translate(-2.3633872,1.0535354)"
-     id="g8-0"><circle
+     transform="matrix(0.65142623,0,0,0.65142623,22.375119,15.57194)"
+     id="g8-0-8"><circle
        class="st0"
        cx="16.700001"
        cy="8.6999998"
        r="3.2"
-       id="circle4-1"
+       id="circle4-1-7"
        style="fill:#424042" /><path
        inkscape:connector-curvature="0"
        class="st0"
        d="m 23.9,17.6 c 0.1,-1.9 -1.4,-5 -4.6,-5 H 14 c -3.2,0 -4.7,3.2 -4.6,5 l -0.1,9.2 c 0,0.6 0.5,1.1 1.2,1 0.6,0 1,-0.5 1,-1.2 L 11.9,19 c 0,-0.2 0.1,-0.3 0.3,-0.3 0.2,0 0.3,0.1 0.3,0.3 v 0 21.4 c 0,0.5 0.4,0.9 0.9,0.9 h 1.5 c 0.5,0 0.8,-0.4 0.9,-0.9 l 0.5,-11.9 c 0,-0.4 0,-0.5 0.4,-0.5 v 0 c 0.3,0 0.3,0.2 0.4,0.5 l 0.5,11.9 c 0,0.5 0.4,0.9 0.9,0.9 H 20 c 0.5,0 0.9,-0.4 0.9,-0.9 v -21.3 0 c 0,-0.2 0.1,-0.3 0.3,-0.3 0.2,0 0.3,0.1 0.3,0.3 l 0.4,7.6 c 0,0.6 0.5,1.2 1,1.2 0.6,0 1.2,-0.4 1.2,-1 z"
-       id="path6-4"
+       id="path6-4-7"
        style="fill:#424042" /></g></svg>

@@ -360,6 +360,25 @@
 		            background-repeat: no-repeat;
 		          }
 
+							.oneadultfam {
+							 background-image: url("../img/1adultfam.svg");
+							 background-repeat: no-repeat;
+						 }
+						 .oneadultfam:hover {
+							background-image: url("../img/1adultfam-white.svg");
+							background-repeat: no-repeat;
+						}
+
+						 .twoadultfam {
+							background-image: url("../img/2adultfam.svg");
+							background-repeat: no-repeat;
+						}
+
+						.twoadultfam:hover {
+						 background-image: url("../img/2adultfam-white.svg");
+						 background-repeat: no-repeat;
+					 }
+
 		          .male:hover {
 		            background-image: url("../img/male-white.svg");
 		            background-repeat: no-repeat;
