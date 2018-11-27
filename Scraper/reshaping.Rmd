@@ -1,0 +1,31 @@
+---
+title: "National Trust reshaping"
+author: "Henry Lau"
+date: "27 November 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(readr)
+library(tidyr)
+library(reshape2)
+NatTrust_clustered <- read_csv("D:/Github/national-trust-scraper/Scraper/NatTrust-clustered3.csv")
+
+```
+```{r}
+melted<-melt(NatTrust_clustered)
+```
+
+```{r}
+casted<- cast(melted,property1+section+ticket+type~...)
+```
+
+
+```{r}
+
+write.csv(casted,"D:/Github/national-trust-scraper/Scraper/NatTrust-clustered3reshaped.csv")
+```
